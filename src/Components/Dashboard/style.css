@@ -1,0 +1,54 @@
+@import "primereact/resources/themes/saga-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+
+.maincontainer {
+  /* display: flex;
+  flex-flow: wrap; */
+  padding: 10%;
+}
+.container{
+    background-color:#F0F0F0;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+.content{
+    background-color:#F0F0F0;  
+}
+.ToolBarRegion{
+    height:5em;
+    background-color:#F0F0F0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em 0 2em;
+}
+.listView{
+    background-color:#F0F0F0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.ViewButtons{
+    background-color:#D3D3D3 !important;
+    margin:0.4em;
+}
+.Sortbuttons{
+    background-color:#D3D3D3 !important;
+    margin:0.4em;
+}
+.viewText{
+    justify-content: center;
+    display: flex;
+    color: gray;
+}
+.icons{
+    width:1.2em;
+    height:1.2em;
+    margin:0.2em;
+}
+.contentheading{
+    padding: 1% 0 0 3%;
+    font-size: 1.5em;
+    font-weight: bold;
+}

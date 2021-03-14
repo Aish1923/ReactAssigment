@@ -1,0 +1,31 @@
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.employeeImg{
+    width: 10em;
+    max-height:10em;
+    min-height:10em;
+}
+.empnameContainer{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+.empName{
+    width:60%;
+    
+}
+.empOffice{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+.eachcardDetail{
+    padding: 0.3em;
+    margin: 0.7em;
+    width: 13em;
+    box-shadow: 0 5px 20px lightgrey;
+}
