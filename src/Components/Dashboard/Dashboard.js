@@ -5,6 +5,7 @@ import axios from "axios";
 import { Paginator } from "primereact/paginator";
 import { Button } from "primereact/button";
 import CardComponent from "../CardComponent";
+import {API_KEY,ApiUrl} from "../../Constants/constants.js"
 
 function Dashboard() {
   const [employeeInfo, setEmployeeInfo] = useState([]);
@@ -17,11 +18,8 @@ function Dashboard() {
   /*api call to get the list of employees to be shown on dashbord*/
   useEffect(() => {
     setshowSpinner(true);
-    const apiKey = "";//api key to be added here
-    const URL = "https://api.1337co.de/v3/employees";  //include the url a in constant file
-    axios.get(URL, { headers: { Authorization: apiKey } })
+    axios.get(ApiUrl, { headers: { Authorization: API_KEY } })
       .then((response) => {
-        console.log(response.data);
         setoriginalEmpList(response.data);
         setEmployeeInfo(response.data.slice(0, numberOfRecordsPerPage));
         setshowSpinner(false);
@@ -64,7 +62,6 @@ function Dashboard() {
 
       return 0;
     });
-    console.log("sorted,", sortedList);
     setEmployeeInfo(sortedList.slice(first, first + numberOfRecordsPerPage));
   };
 
@@ -86,13 +83,10 @@ function Dashboard() {
       ) : (
         ""
       )}
-      {console.log("employeeInfo", employeeInfo)}
-      <div className="maincontainer">
+      {employeeInfo.length>0?<div className="maincontainer">
         <div className="content">
           <div className="contentheading">The fellowship of tretton37</div>
           <div className="ToolBarRegion">
-            {/* <img className="sorticons" src={upicon} alt="ascImg"></img>
-             <img className="sorticons" src={down} alt="descImg"></img> */}
             <div className="Views">
               <div className="viewText">Sort</div>
               <div className="viewActionButtons">
@@ -126,9 +120,9 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className={listView ? "listView" : "container"}>
-            {employeeInfo.map((item) => {
-              return <CardComponent cardDetail={item} />;
+          <div className={listView ? "listview" : "gridview"}>
+            {employeeInfo.map((item,index) => {
+              return <CardComponent key={index} cardDetail={item} />;
             })}
           </div>
         </div>
@@ -138,7 +132,7 @@ function Dashboard() {
           totalRecords={originalEmpList.length}
           onPageChange={(e) => onPageChange(e)}
         ></Paginator>
-      </div>
+      </div>:<div>loading..</div>}
     </React.Fragment>
   );
 }

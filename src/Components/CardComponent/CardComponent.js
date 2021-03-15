@@ -1,9 +1,9 @@
 import React from "react";
-import "./style.css";
 import { Card } from "primereact/card";
 import Linkedin from "../../Images/Linkedin.png";
 import Github from "../../Images/Github.png";
 import Twitter from "../../Images/Twitter.png";
+import "./style.css";
 
 function CardComponent({ cardDetail }) {
 

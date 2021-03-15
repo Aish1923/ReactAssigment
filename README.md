@@ -39,6 +39,43 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## General info
+This project is dashbaord to show list of employees in an oraganisation.
+	
+## Technologies
+Project is created with:
+* ReactJs: 17.0.1
+	
+## Setup
+To run this project, install it locally using npm:
+
+$ cd ../ninja-profiles
+$ npm install
+$ enter the expected API_KEY for getting the response in constants.js  //for this application since we need the hard coded value
+$ npm start.
+
+## Thoughts behind design
+Decided to build the application in React.Primereact is a rich set of open source UI Components for React, which provides many UI elements which could have been used when going through requirements , hence decided to use the same in the project.
+
+## List of stories decided to cover
+1.Responsive design, works on mobile and tablets.
+2.No UI framework used(Bootstrap,Ant).
+Use of flex layouts in css makes it much easier to design a responsive application.
+
+3.Sort by name and office.
+A not so complex logic does the work,hence decided to include it,instead of buttons simple arrow icons would have been a better approach in perspective to design though.
+
+4.Only render a set of profiles using either infinity scrol l,pagination or a load more button.
+PrimeRaect provides pagination component which made it easier to include it.For larger data sets api calls would be included on each page change.But here used a logic to extract certain set of data from the main array to show the same depending on page number clicked.
+
+5.Enable switch between a grid and a different view (such as list).
+Flex layouts helped in achieving the same.
+
+6.Works in Chrome, Firefox,Edge
+7.Works in IE11 
+Including a few dependencies in the Rect application helps the same to run on IE.
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

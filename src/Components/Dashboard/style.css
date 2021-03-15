@@ -7,7 +7,7 @@
   flex-flow: wrap; */
   padding: 10%;
 }
-.container{
+.gridview{
     background-color:#F0F0F0;
     display: flex;
     flex-flow: wrap;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     padding: 0 2em 0 2em;
 }
-.listView{
+.listview{
     background-color:#F0F0F0;
     display: flex;
     justify-content: center;
